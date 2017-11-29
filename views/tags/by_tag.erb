@@ -1,0 +1,11 @@
+<div class="title"><a href="/transactions"><img src="/images/squid logo version 1.png" id="squidlogo_title_solo"></a></div>
+
+<h1 class="table_title" id="edit_title">See transactions by tag!</h1>
+
+<% for tag in @tags %>
+<div class="centre_button">
+  <form action="/tags/by_tag/<%= tag.id %>" method="GET">
+  <button class="add_button" ><%= tag.tag %></button>
+</form>
+</div>
+<% end %>

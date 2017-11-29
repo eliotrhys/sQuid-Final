@@ -1,0 +1,31 @@
+<div class="title"><a href="/transactions"><img src="/images/squid logo version 1.png" id="squidlogo_title_solo"></a></div>
+
+<div class="table_css" id="solo_table">
+<table width="100%">
+<tr>
+  <!-- <th>ID</th> -->
+  <th>Amount</th>
+  <th>Merchant</th>
+  <th>Tag</th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+<% for transaction in @transaction_result %>
+<tr>
+  <!-- <td><%= transaction.id %></td> -->
+  <td><%= transaction.amount %></td>
+  <td><%= transaction.merchant.merchant_name %></td>
+  <td><%= transaction.tag.tag %></td>
+  <td><form action="/transactions/<%= transaction.id %>" method="GET">
+    <input type="submit" value="INFO" class="table_buttons" id="info_button"/></form></td>
+  <td><form action="/transactions/<%= transaction.id %>/edit" method="GET">
+    <input type="submit" value="EDIT" class="table_buttons" id="edit_button"/></form></td>
+  <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
+    <input type="submit" value="DELETE" class="table_buttons" id="delete_button"/></form></td>
+</tr>
+<% end %>
+</table>
+</div>
+
+<div class="centre_button"><button id="total_spend">Total Spend: £ <%= Transaction.total_spend_by_merchant(transaction.merchant.id) %></button></div>

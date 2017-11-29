@@ -1,0 +1,11 @@
+<div class="title"><a href="/transactions"><img src="/images/squid logo version 1.png" id="squidlogo_title_solo"></a></div>
+
+<h1 class="table_title" id="edit_title">See transactions by merchant!</h1>
+
+<% for merchant in @merchants %>
+<div class="centre_button">
+  <form action="/merchants/by_merchant/<%= merchant.id %>" method="GET">
+  <button class="add_button" ><%= merchant.merchant_name %></button>
+</form>
+</div>
+<% end %>

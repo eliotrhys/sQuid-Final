@@ -1,0 +1,34 @@
+<div class="title"><a href="/transactions"><img src="/images/squid logo version 1.png" id="squidlogo_title_solo"></a></div>
+
+<h1 class="table_title" id="edit_title">Add a new transaction!</h1>
+
+<form action="/transactions" method="post">
+
+<div class="edit_form">
+  <div class="around_form">
+  <h3>
+    ENTER AN AMOUNT<br>
+  <input type="text" name="amount" class="entry_field">
+</h3>
+
+  <h3>
+    SELECT A MERCHANT<br>
+      <select name="merchant_id" class="entry_field">
+        <% for merchant in @merchants %>
+        <option value="<%= merchant.id %>"><%= merchant.merchant_name %></option>
+        <% end %>
+      </select>
+  </h3>
+
+  <h3>
+    SELECT A TAG<br>
+      <select name="tag_id" class="entry_field">
+        <% for tag in @tags %>
+        <option value="<%= tag.id %>"><%= tag.tag %></option>
+        <% end %>
+      </select>
+  </h3>
+
+  <input type='submit' class="add_button" id="edit_button">
+
+</form>
