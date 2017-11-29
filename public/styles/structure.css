@@ -165,6 +165,13 @@ th, td {
   padding-top: 10px;
 }
 
+.wrap_buttons {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .table_title {
   color: white;
   font-family: 'Cabin', sans-serif;
