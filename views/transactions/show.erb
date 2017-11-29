@@ -7,6 +7,8 @@
     <th>Amount</th>
     <th>Merchant</th>
     <th>Tag</th>
+    <th>Date</th>
+    <th>Comment</th>
     <th></th>
     <th></th>
   </tr>
@@ -15,6 +17,8 @@
     <td><%= @transaction.amount %></td>
     <td><%= @transaction.merchant.merchant_name %></td>
     <td><%= @transaction.tag.tag %></td>
+    <td><%= @transaction.transaction_date.to_s %></td>
+    <td><%= @transaction.comment %></td>
     <td><form action="/transactions/<%= @transaction.id %>/edit" method="GET">
       <input type="submit" value="EDIT" class="table_buttons" id="edit_button"/></form></td>
     <td><form action="/transactions/<%= @transaction.id %>/delete" method="POST">

@@ -5,7 +5,6 @@
 <div class="table_css">
 <table width="100%">
 <tr>
-  <!-- <th>ID</th> -->
   <th>AMOUNT (£)</th>
   <th>MERCHANT</th>
   <th>TAG</th>
@@ -15,7 +14,6 @@
 </tr>
 <% for transaction in @transactions %>
 <tr>
-  <!-- <td><%= transaction.id %></td> -->
   <td><%= transaction.amount %></td>
   <td><%= transaction.merchant.merchant_name %></td>
   <td><%= transaction.tag.tag %></td>
@@ -38,4 +36,3 @@
 </div>
 
 <div class="centre_button"><button id="total_spend">Total Spend: £ <%= Transaction.total_spend %></button></div>
-<!-- <h1 class="table_title">Total Spend: £ <%= Transaction.total_spend %></h1> -->

@@ -4,26 +4,30 @@ require_relative('tag.rb')
 
 class Transaction
 
-  attr_reader :id, :amount, :merchant_id, :tag_id
+  attr_reader :id, :amount, :merchant_id, :tag_id, :transaction_date, :comment
 
   def initialize(options)
     @id = options['id'].to_i
     @amount = options['amount']
     @merchant_id = options['merchant_id']
     @tag_id = options['tag_id']
+    @transaction_date = options['transaction_date']
+    @comment = options['comment']
   end
 
   def save
     sql = "INSERT INTO transactions(
       amount,
       merchant_id,
-      tag_id
+      tag_id,
+      transaction_date,
+      comment
     )
     VALUES(
-      $1, $2, $3
+      $1, $2, $3, $4, $5
     )
       RETURNING *"
-    values = [@amount, @merchant_id, @tag_id]
+    values = [@amount, @merchant_id, @tag_id, @transaction_date, @comment]
     transaction_data = SqlRunner.run(sql, values)
     @id = transaction_data[0]['id'].to_i
   end
@@ -76,13 +80,15 @@ class Transaction
     (
       amount,
       merchant_id,
-      tag_id
+      tag_id,
+      transaction_date,
+      comment
     ) =
     (
-      $1, $2, $3
+      $1, $2, $3, $4, $5
     )
-    WHERE id = $4"
-    values = [@amount, @merchant_id, @tag_id, @id]
+    WHERE id = $6"
+    values = [@amount, @merchant_id, @tag_id, @transaction_date, @comment, @id]
     SqlRunner.run(sql, values)
   end
 

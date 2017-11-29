@@ -46,13 +46,17 @@ donkey_feed.save
 transaction1 = Transaction.new({
   "amount" => 50,
   "merchant_id" => tesco.id,
-  "tag_id" => groceries.id
+  "tag_id" => groceries.id,
+  "transaction_date" => Date.new(2017, 6, 12),
+  "comment" => 'Yeah boy I love them groceries tho.'
   })
 transaction1.save
 
 transaction2 = Transaction.new({
   "amount" => 35,
   "merchant_id" => forbidden_planet.id,
-  "tag_id" => comic_books.id
+  "tag_id" => comic_books.id,
+  "transaction_date" => Date.new(2017, 6, 12),
+  "comment" => "Oh aye comic books n' that."
   })
 transaction2.save

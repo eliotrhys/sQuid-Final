@@ -22,5 +22,7 @@ CREATE TABLE transactions(
   id SERIAL8 PRIMARY KEY,
   amount INT4,
   merchant_id INT2 REFERENCES merchants(id) ON DELETE CASCADE,
-  tag_id INT2 REFERENCES tags(id) ON DELETE CASCADE
+  tag_id INT2 REFERENCES tags(id) ON DELETE CASCADE,
+  transaction_date DATE,
+  comment VARCHAR(255)
 );
