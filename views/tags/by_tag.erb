@@ -3,7 +3,7 @@
 <h1 class="table_title" id="edit_title">See transactions by tag!</h1>
 
 <% for tag in @tags %>
-<div class="centre_button">
+<div class="wrap_buttons">
   <form action="/tags/by_tag/<%= tag.id %>" method="GET">
   <button class="add_button"><%= tag.tag %></button>
 </form>

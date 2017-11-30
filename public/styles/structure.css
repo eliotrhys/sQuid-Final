@@ -166,10 +166,9 @@ th, td {
 }
 
 .wrap_buttons {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  padding: 10px;
+  display: inline-block;
+  margin: auto;
 }
 
 .table_title {
