@@ -167,9 +167,8 @@ th, td {
 
 .wrap_buttons {
   padding: 10px;
-  /*display: inline-block;*/
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+  position: relative;
 }
 
 .table_title {

@@ -9,30 +9,31 @@
   <div class="around_form">
   <h3>
     ENTER AN AMOUNT<br>
-  <input type="text" name="amount" class="entry_field">
+  <input type="text" name="amount" class="entry_field" value=<%= @transaction.amount%>>
 </h3>
 
   <h3>
     SELECT A MERCHANT<br>
       <select name="merchant_id" class="entry_field">
         <% for merchant in @merchants %>
-        <option value="<%= merchant.id %>"><%= merchant.merchant_name %></option>
+          <option value=<%= merchant.id %> selected=<%= "selected" if @transaction.merchant_id == merchant.id %>><%= merchant.merchant_name %></option>
         <% end %>
       </select>
   </h3>
+
 
   <h3>
     SELECT A TAG<br>
       <select name="tag_id" class="entry_field">
         <% for tag in @tags %>
-        <option value="<%= tag.id %>"><%= tag.tag %></option>
+          <option value=<%= tag.id %> selected=<%= "selected" if @transaction.tag_id == tag.id %> ><%= tag.tag %></option>
         <% end %>
       </select>
   </h3>
 
   <h3>
     ADD A DATE<br>
-    <input type="date" name="transaction_date" placeholder="25/11/2017" class="entry_field"/>
+    <input type="date" name="transaction_date" placeholder="25/11/2017" class="entry_field" value=<%=@transaction.transaction_date%>
   </h3>
 
   <h3>
