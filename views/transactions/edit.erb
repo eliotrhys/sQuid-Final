@@ -24,9 +24,10 @@
 
   <h3>
     SELECT A TAG<br>
+
       <select name="tag_id" class="entry_field">
         <% for tag in @tags %>
-          <option value=<%= tag.id %> selected=<%= "selected" if @transaction.tag_id == tag.id %> ><%= tag.tag %></option>
+          <option value=<%= tag.id %> <%= "selected" if @transaction.tag_id == tag.id %> ><%= tag.tag %></option>
         <% end %>
       </select>
   </h3>
