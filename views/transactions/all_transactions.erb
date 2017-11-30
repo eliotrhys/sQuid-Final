@@ -1,8 +1,6 @@
 <div class="title"><a href="/"><img src="/images/squid logo version 1.png" id="squidlogo_title"></a></div>
 
-<div class="transactions_button"><button class="add_button" id="slightly_smaller"><a href="/all_transactions">View All Transactions</a></button></div>
-
-<h1 class="table_title">RECENT TRANSACTIONS</h1>
+<h1 class="table_title">ALL TRANSACTIONS</h1>
 
 <div class="table_css">
 <table width="100%">
@@ -23,7 +21,7 @@
     <input type="submit" value="INFO" class="table_buttons" id="info_button"/></form></td>
   <td><form action="/transactions/<%= transaction.id %>/edit" method="GET">
     <input type="submit" value="EDIT" class="table_buttons" id="edit_button"/></form></td>
-  <td><form action="/transactions/<%= transaction.id %>/delete" method="POST">
+  <td><form action="/transactions/<%= transaction.id %>/delete_from_all" method="POST">
     <input type="submit" value="DELETE" class="table_buttons" id="delete_button"/></form></td>
 </tr>
 <% end %>
@@ -31,10 +29,5 @@
 </div>
 
 <div class="centre_button"><button class="add_button"><a href="new_transaction">Add Transaction</a></button></div>
-
-<div class="display_inline">
-<button class="inline_buttons"><a href="/tags/by_tag">Transactions By Tag</a></button>
-<button class="inline_buttons"><a href="/merchants/by_merchant">Transactions By Merchant</a></button>
-</div>
 
 <div class="centre_button"><button id="total_spend">Total Spend: £ <%= Transaction.total_spend %></button></div>

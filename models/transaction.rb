@@ -40,6 +40,14 @@ class Transaction
     return result
   end
 
+  def self.absolutely_all
+    sql = "SELECT * FROM transactions ORDER BY id DESC"
+    values = []
+    transaction_data = SqlRunner.run(sql, values)
+    result = transaction_data.map {|transaction| Transaction.new(transaction)}
+    return result
+  end
+
   def merchant
     sql = "SELECT * FROM merchants
     WHERE id = $1"
