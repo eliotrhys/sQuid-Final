@@ -16,7 +16,7 @@
     SELECT A MERCHANT<br>
       <select name="merchant_id" class="entry_field">
         <% for merchant in @merchants %>
-          <option value=<%= merchant.id %> selected=<%= "selected" if @transaction.merchant_id == merchant.id %>><%= merchant.merchant_name %></option>
+          <option value=<%= merchant.id %> <%= "selected" if @transaction.merchant_id == merchant.id %>><%= merchant.merchant_name %></option>
         <% end %>
       </select>
   </h3>
