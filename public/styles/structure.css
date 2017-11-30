@@ -167,8 +167,11 @@ th, td {
 
 .wrap_buttons {
   padding: 10px;
-  display: inline-block;
-  position: relative;
+  display: inline-flex;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .table_title {
