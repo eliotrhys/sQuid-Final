@@ -3,7 +3,6 @@
 <div class="table_css" id="solo_table">
 <table width="100%">
 <tr>
-  <!-- <th>ID</th> -->
   <th>Amount</th>
   <th>Merchant</th>
   <th>Tag</th>
@@ -13,7 +12,6 @@
 </tr>
 <% for transaction in @transaction_result %>
 <tr>
-  <!-- <td><%= transaction.id %></td> -->
   <td><%= transaction.amount %></td>
   <td><%= transaction.merchant.merchant_name %></td>
   <td><%= transaction.tag.tag %></td>
