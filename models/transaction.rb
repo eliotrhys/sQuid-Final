@@ -128,7 +128,7 @@ class Transaction
     WHERE merchants.id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    final_result = result.map{|merchant| Merchant.new(merchant)}
+    final_result = result.map{|transaction| Transaction.new(transaction)}
     return final_result
   end
 

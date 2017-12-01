@@ -12,7 +12,7 @@ get '/merchants/by_merchant' do #TRANSACTIONS BY MERCHANT
 end
 
 get '/merchants/by_merchant/:id' do #TRANSACTIONS BY MERCHANT
-  @transaction_result = Transaction.by_tag(params[:id])
+  @transaction_result = Transaction.by_merchant(params[:id])
   erb(:"merchants/by_merchant_id")
 end
 
